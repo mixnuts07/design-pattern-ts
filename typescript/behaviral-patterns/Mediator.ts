@@ -1,6 +1,6 @@
-// Mediator (メディエーター): オブジェクトの相互作用の集中化。
-// ...
-// ... 具体的には、
+// Mediator (メディエーター): オブジェクトの相互作用の集中化。オブジェクト間の通信をカプセル化することで、クラス間の直接の依存関係を削減し、疎結合を促進する
+// ...　これにより、オブジェクト間の通信を整理し、独立性を維持するのに役立つ。
+// ... 具体的には、複雑なGUIやシステム間の相互作用が多い場合に、コードの組織と疎結合を維持するのに役立つ。
 // 使用例
 // ...
 // ...
@@ -11,3 +11,13 @@
 // ...
 // ...
 // ...
+
+// Mediator Interface
+interface Mediator {
+  notify(sender: BaseComponent, event: string): void;
+}
+
+// Base Component Class
+class BaseComponent {
+  protected mediator: Mediator;
+}
